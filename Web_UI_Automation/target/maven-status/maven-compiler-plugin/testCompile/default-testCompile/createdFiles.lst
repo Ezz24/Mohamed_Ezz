@@ -1,0 +1,7 @@
+base/TestBase.class
+tests/LoginTest.class
+pages/HomePage.class
+pages/RegistrationPage.class
+tests/RegistrationTest.class
+pages/LoginPage.class
+ConfigReader.class
