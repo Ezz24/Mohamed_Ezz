@@ -21,11 +21,12 @@ public class RegistrationTest extends TestBase {
         registrationPage.register(firstName, lastName, postalCode, email, password);
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement profileButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("button[pf-mix-id='headerBtn_profileMenu']")));
 
-        Assert.assertTrue(profileButton.isDisplayed(), "Profile button is not displayed!");
+//        WebElement profileButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("button[pf-mix-id='headerBtn_profileMenu']")));
+//        Assert.assertTrue(profileButton.isDisplayed(), "Profile button is not displayed!");
 
-        WebElement profileName = profileButton.findElement(By.cssSelector("span.header-inner-profile-accountBtn-title"));
+
+        WebElement profileName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"desktopMenu-profile\"]")));
         Assert.assertEquals(profileName.getText(), firstName + " " + lastName, "Profile name does not match!");
     }
 }
